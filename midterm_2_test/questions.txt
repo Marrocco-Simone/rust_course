@@ -1,0 +1,42 @@
+The 2nd midterm covers these topics: Traits, Lifetimes, Heap(Box, Rc, Cell, RefCell), Lists, Trees, Graphs, Closures, Iterators.
+ 
+ define a module `MockTrait` with a trait `Lengthable`
+ the trait defines a function `get_len` that returns an `usize`
+ Implement the trait for `Vec`s, returning their length, for `String`s, returning their length
+ and for `i32`, returning the amount of digits they have.
+ Write a generic function `print_len` that prints out an item and its `get_len`
+ Create a vector of `Lengthable` with `Vec`s, `String`s and `i32`s and
+ call `print_len` on all elements of the vector.
+
+ define a module `MockList` with a `List` struct whose elements are `i32`
+ define these functions for `List`
+     - `add`: takes an `i32` and adds it to the end of the list
+     - `add_nodup`: takes an `i32` and adds it to the end of the list only if there are no other elements like it in the list (try with arbitrary structs for extra complexity)
+     - `add_repl`: takes an `i32` and adds it to the end of the list in as many copies as itself (adding element 3 adds 3 elements of 3)
+     - `remove`: takes an `i32` and removes it from the list
+     - `remove_el`: takes an `i32`, removes it from the list, and returns the returned element (try with arbitrary structs for extra complexity)
+     - `remove_all`: takes an `i32` and removes all its occurrences from the list
+     - `remove_less`: takes an `i32` and removes all the elements smaller than it (try with arbitrary structs for extra complexity)
+     - write the `push` and `pop` functions that treat the list like a stack
+
+ Write an iterator for the `List`, providing both `iter()` and `iter_mut()`
+ Write a function `mapper` that takes an `i32` and a `String` and then depending on whether it's odd or even, returns either function `f` or `g`
+     Function `f` doubles its argument
+     Function `g` captures the `String` parameter of `mapper` and returns its input plus the length of that parameter
+ Create a list and apply `mapper` to all elements of the list
+
+ define a module `MockTree` with a `BinaryTree` struct whose nodes contain `i32` (and the usual left and right siblings)
+ define these functions for `BinaryTree`
+     - `add_node`: adds a node maintaining the < order in the tree
+     (for. ex: if the tree is `[root:{5, l: {2, l:none, r:none}, r:none ]` node "4" gets inserted to the left of "5" and to the right of "2")
+
+ Define a `Graph` as a vector of `Nodes` that must implement different Traits `A` and `B`
+ such that `A` and `B` each define just one function `a` and `b` respectively
+  - define function `add_node` that adds a Node to the graph such that
+     - the added node gets as neighbour all nodes in the graph for which `a` returns a certain value
+     - the added node becomes a neighbour of all the nodes for which `b` returns a certain value
+  - define function `rem_node` that removes all nodes from a graph for which `b` returns a certain value
+ (find inspiration in the notes for how to write a Graph)
+ Define different structures that implement `A` and `B`, add them as elements in the graph and test the functions
+
+

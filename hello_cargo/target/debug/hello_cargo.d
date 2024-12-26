@@ -1,0 +1,1 @@
+/home/simone/tutorial/rust/hello_cargo/target/debug/hello_cargo: /home/simone/tutorial/rust/hello_cargo/src/main.rs /home/simone/tutorial/rust/hello_cargo/src/quattordici.rs /home/simone/tutorial/rust/hello_cargo/src/tredici.rs
